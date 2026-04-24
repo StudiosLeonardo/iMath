@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limits</title>
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- MathJax SCRIPTS -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body>
+    <header>
+        <img src="../imgs/logo.png">
+        <h2>Learn Calculus > Limits</h2>
+    </header>
+
+    <div class="box">
+        <h3>Topics we're gonna study in Limits:</h3>
+
+        <a href="#limits">Limits - Intuition</a>
+        <a href="#ex1">Ex. 1 - Direct Substitution</a>
+        <a href="#ex2">Ex. 2 - Difference of Squares</a>
+        <a href="#ex3">Ex. 3 - Rationalizing Limits</a>
+        <a href="#asymptotes">Limits - Asymptotes</a>
+        <a href="#ex4">Ex. 4 - Limits at Infinity</a>
+        <a href="#one-sided">One-Sided Limits</a>
+        <a href="#continuity">Limits - Continuity</a>
+        <a href="#operations">Operations with Limits</a>
+        <a href="#ex5">Ex. 5 - Squeeze Theorem</a>
+        <a href="#classic">Classic Limits</a>
+    </div>
+
+    <div class="box" id="limits">
+        <h3>Limits - Intuition</h3>
+
+        <p>The best way to understand limits is to use intuition off-hand.</p>
+        <p>Let \(f(x)\) be a generic function of our choice.</p>
+        <p>The limit of \(f(x)\) as \(x\) approaches a certain number "a" is the value that \(f(x)\) is 
+            apperentely going to return when \(x\) becomes closer and closer to "a".</p>
+        <p>And it's denoted as what follows:</p>
+
+        <p>$$\lim_{x \to a} f(x)$$</p>
+    </div>
+
+    <div class="box" id="ex1">
+        <h3>Ex. 1 - Direct Substitution</h3>
+
+        <p>$$Let f(x) = x + 2$$</p>
+
+        <p>The limit of \(f(x)\) as \(x\) approaches 1 is represented like this:</p>
+        
+        <p>$$\lim_{x \to 1} f(x)$$</p>
+
+        <p>We know that \(f(x) = x + 2\), so we can subsstitute in the limit:</p>
+
+        <p>$$\lim_{x \to 1} x + 2$$</p>
+
+        <p>This is basically asking: "What is the value of the function when \(x\) iss almost equal to 1?"</p>
+        <p>In this case the answer is eassy, since when \(x\) is very close to \(1\), the whole function 
+            is almost equal to \(1 + 2\), which is \(3\).</p>
+        <p>Therefore, this is the easiest type of limit, where we can just substitute \(x\) by the number 
+            which the limit is tending to, like this:</p>
+
+        <p>$$\lim_{x \to 1} x + 2 = 1 + 2 = 3$$</p>
+    </div>
+
+    <div class="box" id="ex2">
+        <h3>Ex. 2 - Difference of Squares</h3>
+
+        <p>Let's say this is the limit we're now trynna solve:</p>
+
+        <p>$$\lim_{x \to 2} \frac{x^2 -4}{x - 2}$$</p>
+
+        <p>Let's first test direct substitution:</p>
+
+        <p>$$\frac{x^2 - 4}{x - 2} = \frac{2^2 - 4}{2 - 2} = \frac{4 - 4}{2 - 2} = \frac{0}{0}$$</p>
+
+        <p>You see? Direct Substitution leads us to an indetermination!</p>
+
+        <div class="tip">
+            <h3>Tip!</h3>
+
+            <p>Whenever the expression inside the limit develops into an indetermination, like 
+                \(\frac{0}{0}\), \(\frac{\infty}{\infty}\) or some other indetermination, you should always look for 
+                alternative ways to manipulate the expression to be able to solve the limit.</p>
+        </div>
+
+        <p>So, we are gonna first manipulate the expression a little bit:</p>
+        <p>Note that the numerator \(x^2 - 4\) can be written as \(x^2 - 2^2\)</p>
+        <p>OMG! A Remarkable Product! The Difference of Squares to be exact!</p>
+        <p>And the difference of squares says:</p>
+
+        <p>$$a^2 - b^2 = (a + b) \cdot (a - b)$$</p>
+
+        <p>So we have:</p>
+
+        <p>$$x^2 - 2^2 = (x + 2) \cdot (x - 2)$$</p>
+
+        <p>Put this product in the place of the old \(x^2 -4\) in the original expression:</p>
+
+        <p>$$\frac{x^2 - 2^2}{x - 2} = \frac{(x + 2) \cdot (x - 2)}{x - 2}$$</p>
+
+        <p>Note that we can cancel \(x - 2\) both in the numerator and in the denominator.</p>
+
+        <div class="attention">
+            <h3>Attention!</h3>
+            <p>In ordinary cases, where \(x = 2\), we CANNOT cancel \(x - 2\), since that would bee ignoring
+                the indetermination \(\frac{0}{0}\), which is a complete absurd!
+            </p>
+            <p>However, we are treating limits, and \(x\) is NEVER equal to the tending number, 
+                it's just so close.</p>
+            <p>That's why we can cancel the \(x - 2\), since \(x\) is just very close to 2, but not exactly to 2.</p>
+        </div>
+
+        <p>Cancel \(x - 2\):</p>
+
+        <p>$$\frac{(x + 2) \cdot (x - 2)}{x - 2} = x + 2$$</p>
+
+        <p>And as we could reduce that whole fraction to a simpler function, we can now substitute 
+            in the original limit.</p>
+
+        <p>$$\lim_{x \to 2} \frac{x^2 - 4}{x - 2} = \lim_{x \to 2} x + 2$$</p>
+
+        <p>We then reduced the whole "indetermination" to just a valid "direct substitution":</p>
+
+        <p>$$x + 2 = 2 + 2 = 4$$</p>
+
+        <p>Therefore:</p>
+
+        <p>$$\lim_{x \to 2} \frac{x^2 - 4}{x - 2} = 4$$</p>
+    </div>
+
+    <div class="box" id="ex3">
+        <h3>Ex. 3 - Rationalizing Limits</h3>
+
+        <p>Let's say we have this limit to solve:</p>
+
+        <p>$$\lim_{x \to 0} \frac{\sqrt{x + 1} - 1}{x}$$</p>
+
+        <p>Let's first try Direct Substitution:</p>
+
+        <p>$$\frac{\sqrt{x + 1} - 1}{x} = \frac{\sqrt{0 + 1} - 1}{0} = \frac{1 - 1}{0} = \frac{0}{0}$$</p>
+
+        <p>
+            Remember the tip from 
+            <a href="#ex1">Example 1</a>
+            , let's try to manipulate the expression.
+        </p>
+        <p>Since the numerator is kinda complex to visualize, let's simplify it by introducing 
+            an Auxiliary Variable:</p>
+
+        <p>Let \(a = \sqrt{x + 1}\)</p>
+
+        <p>Then we have:</p>
+
+        <p>$$\frac{\sqrt{x + 1} - 1}{x} = \frac{a - 1}{x}$$</p>
+
+        <div class="tip">
+            <h3>Tip!</h3>
+            <p>When there's a limit envolving roots, it's always recommended that you Rationalize it.</p>
+            <p>To rationalize it, you should multiply both the numerator and the denominator by the Conjugate.</p>
+            <p>To get the conjugate, just change the signal between the two terms. Look:</p>
+
+            <p>$$a - b \Rightarrow conjugate = a + b$$</p>
+            <p>$$a + b \Rightarrow conjugate = a - b$$</p>
+        </div>
+
+        <p>Rationalizing what we have:</p>
+
+        <p>$$\frac{a - 1}{x} = \frac{a - 1}{x} \cdot \frac{a + 1}{a + 1} = \frac{(a - 1) \cdot (a + 1)}{x \cdot (a + 1)}$$</p>
+
+        <p>We now have the Sum by the Difference, which can be simplified into the Difference of Squares, 
+            such as in <a href="#ex2">Example 2</a></p>
+
+        <p>$$\frac{(a - 1) \cdot (a + 1)}{x \cdot (a + 1)} = \frac{a^2 - 1^2}{x \cdot (a + 1)}$$</p>
+
+        <p>Now it's better that we resume the substitution by the Auxiliary Variable like this:</p>
+
+        <p>$$a^2 = (\sqrt{x + 1})^2 = x + 1$$</p>
+        <p>$$\frac{a^2 - 1^2}{x \cdot (a + 1)} = \frac{x + 1 - 1}{x \cdot (\sqrt{x + 1} + 1)} = 
+            \frac{x}{x \cdot (\sqrt{x + 1} + 1)}$$</p>
+
+        <p>Cancel \(x\) in the numerator and the denominator:</p>
+
+        <p>$$\frac{1}{\sqrt{x + 1} + 1}$$</p>
+
+        <p>Just do Direct Substitution:</p>
+
+        <p>$$\frac{1}{\sqrt{0 + 1} + 1} = \frac{1}{\sqrt{1} + 1} = \frac{1}{1 + 1} = \frac{1}{2}$$</p>
+
+        <p>Therefore:</p>
+
+        <p>$$\lim_{x \to 0} \frac{\sqrt{x + 1} - 1}{x} = \frac{1}{2}$$</p>
+    </div>
+
+    <div class="box" id="asymptotes">
+        <h3>Limits - Asymptotess</h3>
+
+        <p>Let \(f(x) = \frac{1}{x}\)</p>
+        <p>This is an "asymptotic function", that is: When \(x\) tends to \(\infty\), the whole function 
+            gets smaller and smaller, towards \(0\), and its value becomes almost \(0\).</p>
+        <p>Therefore:</p>
+        <p>$$x \to \infty \implies \frac{1}{x} \to 0$$</p>
+
+        <p>And it's also valid to when \(x\) tends to \(-\infty\), since it's the same case, but in stead 
+            of getting closer to \(0\) from positive numbers, it gets closer to \(0\) from negative numbers.</p>
+        <p>Therefore:</p>
+        <p>$$x \to -\infty \implies \frac{1}{x} \to 0$$</p>
+    </div>
+
+    <div class="box" id="ex4">
+        <h3>Ex. 4 - Limits at Infinity</h3>
+
+        <p>Let's solve:</p>
+        <p>$$\lim_{x \to \infty} \frac{2x + 1}{x}$$</p>
+        <p>When we try Direct Substitution, that leads us with \(\frac{\infty}{\infty}\), 
+            which is indeterminate.</p>
+        <p>So let's divide both the numerator and the denominator by \(x\), or just multiply them by \(\frac{1}{x}\):</p>
+        <p>$$\frac{2x + 1}{x} \cdot \frac{\frac{1}{x}}{\frac{1}{x}} = \frac{\frac{2x + 1}{x}}{\frac{x}{x}} = 
+            \frac{\frac{2x}{x} + \frac{1}{x}}{\frac{x}{x}}$$</p>
+        <p>Note that \(\frac{x}{x} = 1\) and \(\frac{2x}{x} = 2\).</p>
+        <p>Also keep in mind that our \(x\) is approaching \(\infty\), that means \(\frac{1}{x}\) will 
+            become \(0\) inside the limit.</p>
+        <p>Leaving us with the following:</p>
+        <p>$$\frac{\frac{2x}{x} + \frac{1}{x}}{\frac{x}{x}} = \frac{2 + 0}{1} = \frac{2}{1} = 2$$</p>
+        <p>Therefore:</p>
+        <p>$$\lim_{x \to \infty} \frac{2x + 1}{x} = 2$$</p>
+
+        <div class="tip">
+            <h3>Tip!</h3>
+
+            <p>You can focus on the highest-degree terms when dealing with rational functions at infinity.</p>
+            <p>In that case, you could ignore the "\(+1\)" in the numerator, and just keep the "\(2x\)"".</p>
+            <p>In the denominator, you didn't have anything to do, since \(x\) was there by its own...</p>
+            <p>And then you could combine both ideas and get to \(\frac{2x}{x}\), which is \(2\).</p>
+            <p>Keep in mind that this only works when solving rational functions, that might not work with others!</p>
+        </div>
+    </div>
+
+    <div class="box" id="one-sided">
+        <h3>One-Sided Limits</h3>
+
+        <p>One-sided limits are limits where \(x\) approaches a value from only one side.</p>
+        <p>For example, the limit as \(x\) approaches "a" FROM THE RIGHT of \(f(x)\) is this:</p>
+        <p>$$\lim_{x \to a^+} f(x)$$</p>
+        <p>And that means: \(x\) approaching value "a" from values greater than "a" itself.</p>
+        <p>And the limit as \(x\) approaches "a" FROM THE LEFT of \(f(x)\) is this:</p>
+        <p>$$\lim_{x \to a^-} f(x)$$</p>
+        <p>And that means: \(x\) approaching the value "a" from values less than "a" itself.</p>
+
+        <div class="attention">
+            <h3>Attention!</h3>
+            <p>A two-sided limit exists only if the left-hand limit and the right-hand limit are equal.</p>
+        </div>
+
+        <div class="box">
+            <h4>Existing limit case</h4>
+
+            <p>Let's say we have:</p>
+            <p>$$\lim_{x \to 1} x^2$$</p>
+
+            <p>The left-hand limit is:</p>
+            <p>$$\lim_{x \to 1^-} x^2$$</p>
+            <p>And when \(x\) becomes closer to \(1\) from the left, the function 
+                becomes closer to \(1^2\), which is \(1\):</p>
+            <p>$$\lim_{x \to 1^-} x^2 = 1$$</p>
+
+            <p>The right-hand limit is:</p>
+            <p>$$\lim_{x \to 1^+} x^2$$</p>
+            <p>And when \(x\) becomes closer to \(1\) from the right, the function 
+                becomes closer to \(1^2\) as well, which is \(1\):</p>
+            <p>$$\lim_{x \to 1^+} x^2 = 1$$</p>
+                
+            <p>Therefore, we can see that both one-sided limits are equal to each other. 
+                That means the original limit exists and it's also equal to them:</p>
+            <p>$$\lim_{x \to 1^-} x^2 = \lim_{x \to 1^+} x^2 = \lim_{x \to 1} x^2 = 1$$</p>
+        </div>
+
+        <div class="box">
+            <h4>Non-existing limit case</h4>
+
+            <p>Let's say we have:</p>
+            <p>$$\lim_{x \to 0} \frac{1}{x}$$</p>
+
+            <p>The left-hand limit is:</p>
+            <p>$$\lim_{x \to 0^-} \frac{1}{x}$$</p>
+            <p>And when \(x\) becomes closer to \(0\) from the left, the function 
+                becomes closer to \(\frac{1}{\text{very small negative number}}\), which is close to 
+                \(-\frac{1}{\text{very small number}}\), which tends to -\(\infty\):</p>
+            <p>$$\lim_{x \to 0^-} \frac{1}{x} = -\infty$$</p>
+
+            <p>The right-hand limit is:</p>
+            <p>$$\lim_{x \to 0^+} \frac{1}{x}$$</p>
+            <p>And when \(x\) becomes closer to \(0\) from the right, the function 
+                becomes closer to \(\frac{1}{\text{very small number}}\), which tends to \(\infty\):</p>
+            <p>$$\lim_{x \to 0^+} \frac{1}{x} = \infty$$</p>
+                
+            <p>Therefore, we can see that both one-sided limits are different from each other. 
+                That means the original limit DOES NOT exist!</p>
+            <p>$$\lim_{x \to 0} \frac{1}{x} \text{ does not exist}$$</p>
+        </div>
+    </div>
+
+    <div class="box" id="continuity">
+        <h3>Limits - Continuity</h3>
+
+        <p>A function is continuous at a point if it satisfies the 3 conditions below:</p>
+        <p>1. \(f(a)\) must exist</p>
+        <p>2. \(\lim_{x \to a} f(x)\) must exist</p>
+        <p>3. Both of those values must be equal</p>
+        <p>"a" is simply any chosen point in the function.</p>
+        <p>Let's reuse previous examples:</p>
+
+        <div class="box">
+            <h4>When a function is continuous</h4>
+
+            <p>Let \(f(x) = x^2\)</p>
+            <p>Note that for any point "a" chosen, it's true what follows:</p>
+            <p>\(f(a) = a^2\), it exists \(\checkmark\)</p>
+            <p>\(\lim_{x \to a} f(x) = a^2\), it exists \(\checkmark\)</p>
+            <p>And note that \(f(a)\) and \(\lim_{x \to a} f(x)\) are equal \(\checkmark\)</p>
+            <p>That means \(f(x) = x^2\) is a continuous function.</p>
+        </div>
+
+        <div class="box">
+            <h4>When a function is NOT continuous</h4>
+
+            <p>Let \(f(x) = \frac{1}{x}\)</p>
+            <p>When we choose \(a = 0\) as our point, look what happens:</p>
+            <p>\(f(a) = \frac{1}{0}\) it's undefined \(\implies\) does not exist \(\times\)</p>
+            <p>As we saw in the <a href="#one-sided">One-Sided Limits</a> topic, the function 
+                \(f(x) = \frac{1}{x}\) has different one-sided limits on the point \(a = 0\). They are:</p>
+            <p>$$\lim_{x \to 0^-} \frac{1}{x} = -\infty$$</p>
+            <p>$$\lim_{x \to 0^+} \frac{1}{x} = \infty$$</p>
+            <p>So the limit does not exist \(\times\)</p>
+            <p>Therefore we can claim \(f(x) = \frac{1}{x}\) is not a continuous function, since 
+                when we choose \(a = 0\), the conditions are not met.</p>
+        </div>
+    </div>
+
+    <div class="box" id="operations">
+        <h3>Operations with Limits</h3>
+
+        <p>Yeah! You can make operations with limits! And it's pretty simple:</p>
+
+        <div class="box">
+            <h4>Sum</h4>
+            <p>$$\lim {[f(x) + g(x)]} = {[\lim {f(x)}]} + {[\lim {g(x)}]}$$</p>
+        </div>
+
+        <div class="box">
+            <h4>Difference</h4>
+            <p>$$\lim {[f(x) - g(x)]} = {[\lim {f(x)}]} - {[\lim {g(x)}]}$$</p>
+        </div>
+
+        <div class="box">
+            <h4>Product</h4>
+            <p>$$\lim {[f(x) \cdot g(x)]} = {[\lim {f(x)}]} \cdot {[\lim {g(x)}]}$$</p>
+        </div>
+
+        <div class="box">
+            <h4>Quotient</h4>
+            <p>$$\lim \frac{f(x)}{g(x)} = \frac{\lim{f(x)}}{\lim {g(x)}}$$</p>
+
+            <div class="attention">
+                <h4>Attention</h4>
+                <p>$$g(x) \neq 0$$</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="box" id="ex5">
+        <h3>Ex. 5 - Squeeze Theorem</h3>
+
+        <p>Let \(f(x) = x^2 \cdot \sin\left(\frac{1}{x}\right)\)</p>
+        <p>Let's find \(\lim_{x \to 0} f(x)\)</p>
+        <p>We know that the sine of anything is always inside the interval from -1 to 1, that is:</p>
+        <p>$$-1 \le \sin\left(\frac{1}{x}\right) \le 1$$</p>
+        <p>You can multiply everything by \(x^2\) to make \(f(x)\) appear:</p>
+        <p>$$-x^2 \le x^2 \cdot \sin\left(\frac{1}{x}\right) \le x^2$$</p>
+        <p>Now that we've expressed \(f(x)\) inside this chain, we can apply Squeeze Theorem:</p>
+
+        <div class="tip">
+            <h3>Squeeze Theorem:</h3>
+            <p>Whenever you have a chain of functions, </p>
+            <p>$$f(x) \le g(x) \le h(x)$$</p>
+            <p>And the limit of the outter functions are the same, </p>
+            <p>$$\lim f(x) = \lim h(x) = L$$</p>
+            <p>The limit of the inner function is also the same.</p>
+            <p>$$\lim g(x) = L$$</p>
+            <p>And you can use this theorem to solve \(\sin\), \(\cos\) or other functions that are 
+                bounded by an interval.
+            </p>
+        </div>
+
+        <p>Applying Squeeze Theorem we have:</p>
+        <p>$$\lim_{x \to 0} -x^2 = 0$$</p>
+        <p>$$\lim_{x \to 0} x^2 = 0$$</p>
+        <p>The outter ones are equal \(\checkmark\)</p>
+        <p>Therefore we found the limit we were trynna solve:</p>
+        <p>$$\lim_{x \to 0} \left[x^2 \cdot \sin\left(\frac{1}{x}\right)\right] = 0$$</p>
+    </div>
+
+    <div class="box" id="classic">
+        <h3>Classic Limits</h3>
+
+        <p>There aree some famous/classic limits that you'd really like to know.</p>
+        <p>However, they'd be kinda hard to explain, since you'd have to know Derivatives.</p>
+        <p>So I'm just gonna tell you the tricks, but the deep reassons only when we get to Derivatives.</p>
+
+        <div class="box">
+            <h4>Sine</h4>
+            <p>Let's start with this:</p>
+            <p>$$\lim_{\theta \to 0} \sin(\theta)$$</p>
+            <p>When \(\theta \to 0\), \(\sin(\theta) \to \theta\), so:</p>
+            <p>$$\lim_{\theta \to 0} \sin(\theta) = \theta$$</p>
+        </div>
+    
+        <div class="box">
+            <h4>Cosine</h4>
+            <p>Take a look at this one:</p>
+            <p>$$\lim_{\theta \to 0} \cos(\theta)$$</p>
+            <p>When \(\theta \to 0\), \(\cos(\theta) \to 1\), so:</p>
+            <p>$$\lim_{\theta \to 0} \cos(\theta) = 1$$</p>
+        </div>
+
+        <div class="box">
+            <h4>Euler's Number</h4>
+            <p>The last one is this:</p>
+            <p>$$e = \lim_{n \to \infty} \left( 1 + \frac{1}{n} \right)^n$$</p>
+            <p>\(e\) is a very special number. It's the base of the natural logarithm: \(\ln(x)\)</p>
+        </div>
+    </div>
+</body>
+</html>

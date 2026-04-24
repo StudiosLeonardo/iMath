@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derivatives</title>
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- MathJax SCRIPTS -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body>
+    <header>
+        <img src="../imgs/logo.png">
+        <h2>Learn Calculus > Derivatives</h2>
+    </header>
+
+    <div class="box">
+        <h3>Topics we're gonna study in Derivatives:</h3>
+
+        <a href="#derivatives">Derivatives - Intuition</a>
+        <a href="#ex1">Ex. 1 - Power Rule</a>
+        <a href="#ex2">Ex. 2 - Sum & Difference Rules</a>
+        <a href="#const-multiple">Constant Multiple Rule</a>
+        <a href="#ex3">Ex. 3 - Product Rule</a>
+        <a href="#ex4">Ex. 4 - Quotient Rule</a>
+        <a href="#ex5">Ex. 5 - Chain Rule</a>
+        <a href="#logs">Derivatives - Logarithms</a>
+        <a href="#exp">Derivatives - Exponentials</a>
+        <a href="#trig">Derivatives - Trigonometry</a>
+        <a href="#ex6">Ex. 6 - Implicit Differentiation</a>
+    </div>
+
+    <div class="box" id="derivatives">
+        <h3>Derivatives - Intuition</h3>
+
+        <p>The derivative is the instantaneous slope of a function at a point. More precisely, the 
+            slope of the tangent line that touches the graph at that point.</p>
+        <p>Derivatives can be interpreted as speed, acceleration, inflation, and much more.</p>
+        <p>Furthermore, its sign indicates if a function is increasing or decreasing.</p>
+
+        <p>For example:</p>
+        <p>Let \(f(x) = 4x + 2\)</p>
+        <p>Using high school knowledge, we know \(f(x)\) is a linear function, meaning that it can be 
+            written as:</p>
+        <p>$$f(x) = ax + b = 4x + 2$$</p>
+        <p>Thus we're able to match \(b\) with \(+2\), which doesn't affect the variation rate of the function, 
+            and \(a\) with \(4\).</p>
+        <p>Therefore the slope of \(f(x)\) is \(4\), which is the function's derivative:</p>
+        <p>$$f'(x) = (4x + 2)' = 4$$</p>
+        <p>Since \(4 > 0\), we can say the function is increasing.</p>
+
+        <div class="tip">
+            <h4>Note!</h4>
+
+            <p>There are 2 ways to denote the derivative:</p>
+            <p>1. \(f'(x) \Rightarrow\) Lagrange's notation</p>
+            <p>2. \(\frac{d}{dx} f(x) \Rightarrow\) Leibniz's notation</p>
+        </div>
+
+        <div class="attention">
+            <h3>Attention!</h3>
+
+            <p>Note the slope of a linear function is constant all over its line, due to its constant change rate.</p>
+            <p>However, this is not true for all functions...</p>
+            <p>Derivatives of non-linear functions may result in another function, not just a number!</p>
+        </div>
+
+        <p>Let's see another example:</p>
+        <p>Let \(g(x) = -4x + 9\)</p>
+        <p>The derivative of \(g(x)\) is this:</p>
+        <p>$$g'(x) = \frac{d}{dx} (-4x + 9) = -4$$</p>
+        <p>Note the derivative is the constant \(-4\) in this case.</p>
+        <p>And as \(-4 < 0\), we can say this function is decreasing.</p>
+        
+        <div class="tip">
+            <h4>Tip!</h4>
+
+            <p>The FORMAL mathematical definition of a derivative is:</p>
+            <p>$$f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}$$</p>
+            <p>But normally we just use the common differentiation techniques and rules, which let us solve almost any derivative just fine!</p>
+        </div>
+    </div>
+
+    <div class="box" id="ex1">
+        <h3>Ex. 1 - Power Rule</h3>
+
+        <p>Let \(f(x) = x^2\)</p>
+        
+        <div class="attention">
+            <h4>Attention!</h4>
+
+            <p>Note that the function is non-linear, that means it hasn't got a constant slope, but a slope that 
+                changes according to the point on the function. Furthermore, the derivative will result in a 
+                function, just get used to it, functions as our answers is gonna be common from now on!</p>
+        </div>
+
+        <p>To calculate the derivative of that, we have to be introduced to the Power Rule:</p>
+        <p>$$\frac{d}{dx} x^n = n \cdot x^{n-1}$$</p>
+        <p>Don't be scared! It's just telling you to "knock down" the exponent and then decrease the exponent by \(1\). Like this:</p>
+        <p>$$\frac{d}{dx} x^2 = 2 \cdot x^{2 - 1} = 2 \cdot x^1 = 2x$$</p>
+        <p>Therefore, the derivative of \(f(x)\) is the function \(2x\). Notice that the derivative depends on 
+            \(x\), meaning the slope changes at each point.</p>
+        
+        <div class="tip">
+            <h4>Tip!</h4>
+            <p>If you wanna know the slope in \(x = 4\), for example, just do:</p>
+            <p>$$f'(4) = 2 \cdot 4 = 8$$</p>
+            <p>So the slope in \(x = 4\) is \(8\).</p>
+        </div>
+    </div>
+
+    <div class="box" id="ex2">
+        <h3>Ex. 2 - Sum & Difference Rules</h3>
+
+        <p>Let \(f(x) = x^2 + x\)</p>
+        <p>The sum rule is simple. Just split the expression into separate derivatives:</p>
+        <p>$$\frac{d}{dx} (x^2 + x) = \frac{d}{dx} x^2 + \frac{d}{dx} x$$</p>
+        <p>Now, solve them one by one:</p>
+        <p>Use Power Rule: \(\frac{d}{dx} x^2 = 2 \cdot x^1 = 2x\)</p>
+        <p>Also use Power Rule: \(\frac{d}{dx} x = 1 \cdot x^0 = 1 \cdot 1 = 1\)</p>
+        <p>So we're left with:</p>
+        <p>$$\frac{d}{dx} (x^2 + x) = 2x + 1$$</p>
+        <p>That's the derivative! Easy, right?</p>
+
+        <p>Now let's see an example with the difference and the sum rules:</p>
+        <p>Let \(g(x) = x^4 - x^3 + x^2 - x\)</p>
+        <p>Just do the same. Differentiate each term separately:</p>
+        <p>$$(x^4)' = 4x^3$$</p>
+        <p>$$(-x^3)' = -3x^2$$</p>
+        <p>$$(x^2)' = 2x^1 = 2x$$</p>
+        <p>$$(-x)' = -1x^0 = -1$$</p>
+        <p>Now you just "join" them:</p>
+        <p>$$g'(x) = 4x^3 - 3x^2 + 2x - 1$$</p>
+        <p>Done!</p>
+
+        <div class="tip">
+            <h4>Tip!</h4>
+
+            <p>There are some "tricks" for well known derivatives to calculate it fast!</p>
+            <p>1. The derivative of \(ax\) is \(a\), just get the number multiplying \(x\):</p>
+            <p>$$(-40x)' = -40$$ $$\left(\frac{-12}{7} x\right)' = \frac{-12}{7}$$</p>
+
+            <p>2. The derivative of a constant is \(0\):</p>
+            <p>$$(0)' = 0$$ $$(e)' = 0$$ $$\left(\frac{-12}{7}\right)' = 0$$</p>
+        </div>
+    </div>
+
+    <div class="box" id="const-multiple">
+        <h3>Constant Multiple Rule</h3>
+
+        <p>This is straightforward!</p>
+        <p>When you have to differentiate \(k \cdot f(x)\), where \(k\) is a constant and \(f(x)\) is a function, 
+            you just gotta pull out the constant:</p>
+        <p>$$\frac{d}{dx}[k \cdot f(x)] = k \cdot f'(x)$$</p>
+        <p>Examples:</p>
+        <p>$$(7x^7)' = 7 \cdot (x^7)' = 7 \cdot (7x^6) = 49x^6$$</p>
+        <p>$$\left(\frac{1}{3}x^3\right)' = \frac{1}{3} \cdot (x^3)' = \frac{1}{3} \cdot (3x^2) = \frac{3x^2}{3} = x^2$$</p>
+    </div>
+
+    <div class="box" id="ex3">
+        <h3>Ex. 3 - Product Rule</h3>
+
+        <p>Let \(u\) and \(v\) be any two functions.</p>
+        <p>Product Rules says:</p>
+        <p>$$(uv)' = u'v + uv'$$</p>
+        <p>Let's say we have \(f(x) = x^2 \cdot (x + 1)\)</p>
+        <p>To find \(f'(x)\), just make \(u = x^2\) and \(v = (x + 1)\) and apply the formula:</p>
+        <p>$$\frac{d}{dx} x^2 \cdot (x + 1) = (x^2)' \cdot (x + 1) + x^2 \cdot (x + 1)'$$</p>
+        <p>From previous examples, we know \((x^2)' = 2x\) and \((x + 1)' = 1\).</p>
+        <p>Thus we're left with:</p>
+        <p>$$2x \cdot (x + 1) + x^2 \cdot 1 = 2x^2 + 2x + x^2 = 3x^2 + 2x$$</p>
+        <p>Therefore:</p>
+        <p>$$\frac{d}{dx} x^2 \cdot (x + 1) = 3x^2 + 2x$$</p>
+
+        <div class="tip">
+            <h4>Tip!</h4>
+
+            <p>Noticee that you could simplify the function the entire time:</p>
+            <p>$$x^2 \cdot (x + 1) = x^3 + x^2$$</p>
+            <p>$$\therefore \frac{d}{dx} (x^3 + x^2) = 3x^2 + 2x$$</p>
+            <p>But I split them into a product just for you to know it's also valid to apply the Product Rule, 
+                and sometimes that's the only thing that will work.</p>
+        </div>
+    </div>
+
+    <div class="box" id="ex4">
+        <h3>Ex. 4 - Quotient Rule</h3>
+
+        <p>Let \(u\) and \(v\) be any two functions.</p>
+        <p>Quotient Rule says:</p>
+        <p>$$\left(\frac{u}{v}\right)' = \frac{u'v - uv'}{v^2}$$</p>
+        <p>For example:</p>
+        <p>Let's say \(f(x) = \frac{x^2 + 1}{x + 1}\)</p>
+        <p>Then we differentiate \(u\) and \(v\) using Power Rule and Sum Rule:</p>
+        <p>$$u = x^2 + 1 \implies u' = 2x + 0 = 2x$$</p>
+        <p>$$v = x + 1 \implies v' = 1 + 0 = 1$$</p>
+        <p>Now we just substitute everything into the formula:</p>
+        <p>$$\frac{2x \cdot (x + 1) - (x^2 + 1) \cdot 1}{(x + 1)^2}$$</p>
+        <p>Simplify the numerator, combine like terms and apply the Remarkable Product in the denominator:</p>
+        <p>$$\frac{2x^2 + 2x - x^2 - 1}{x^2 + 2 \cdot x \cdot 1 + 1^2} = \frac{x^2 + 2x - 1}{x^2 + 2x + 1}$$</p>
+        <p>So the derivative is:</p>
+        <p>$$\frac{d}{dx} \left(\frac{x^2 + 1}{x + 1}\right) = \frac{x^2 + 2x - 1}{x^2 + 2x + 1}$$</p>
+
+        <div class="attention">
+            <h4>Attention!</h4>
+
+            <p>Don't mess it up!</p>
+            <p>There's a "\(-\)" sign in the formula.</p>
+            <p>Thus the order of the terms is actually crucial!</p>
+            <p>This is a very common misstake students make!</p>
+        </div>
+    </div>
+
+    <div class="box" id="ex5">
+        <h3>Ex. 5 - Chain Rule</h3>
+
+        <p>What if we had a function inside a function?</p>
+        <p>Let's say we have \(f(g(x))\).</p>
+        <p>Its derivative would be:</p>
+        <p>$$\frac{d}{dx} f(g(x)) = f'(g(x)) \cdot g'(x)$$</p>
+
+        <p>Look at this example:</p>
+        <p>Let \(f(x) = (x^2 + 1)^3\)</p>
+        <p>To differentiate it, first apply Power Rule "outside", then multiply by the derivative of the "inside":</p>
+        <p>$$f'(x) = 3 \cdot (x^2 + 1)^2 \cdot (x^2 + 1)'$$</p>
+        <p>Which becomes:</p>
+        <p>$$f'(x) = 3 \cdot (x^2 + 1)^2 \cdot 2x = 6x \cdot (x^2 + 1)^2$$</p>
+        <p>Done!</p>
+
+        <div class="tip">
+            <h4>Tip!</h4>
+
+            <p>Think of it as:</p>
+            <p>$$\text{outside}' \times \text{inside}'$$</p>
+        </div>
+    </div>
+
+    <div class="box" id="logs">
+        <h3>Derivatives - Logarithms</h3>
+
+        <div class="box">
+            <h4>Natural Log</h4>
+
+            <p>Let \(f(x) = \ln(x)\)</p>
+            <p>This is a property of \(\ln(x)\):</p>
+            <p>$$\frac{d}{dx} \ln(x) = \frac{1}{x}$$</p>
+
+            <p>So let's make it interesting...</p>
+            <p>Let \(g(x) = \ln(u)\), where \(u\) is a function.</p>
+            <p>We can use Chain Rule:</p>
+            <p>$$\frac{d}{dx} \ln(u) = \frac{1}{u} \cdot u' = \frac{u'}{u}$$</p>
+
+            <div class="tip">
+                <h4>Tip!</h4>
+
+                <p>So, whenever you have \(\frac{d}{dx} \ln(f(x))\), it's equal to \(\frac{f'(x)}{f(x)}\)</p>
+                <p>It's just the derivative of the function divided by the function itself.</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <h4>Any-Base Log</h4>
+
+            <p>Let \(f(x) = \log_a(x)\)</p>
+            <p>Let's differentiate it!</p>
+            <p>$$\frac{d}{dx} \log_a(x)$$</p>
+            <p>To do so, we can use a property of logarithms to change the base:</p>
+            <p>$$\log_a(x) = \frac{\ln(x)}{\ln(a)}$$</p>
+            <p>Now, use Quotient Rule:</p>
+            <p>$$\left(\frac{u}{v}\right)' = \frac{u'v - uv'}{v^2}$$</p>
+            <p>$$u = \ln(x) \implies u' = \frac{1}{x}$$</p>
+            <p>$$a \text{ is constant } \implies \ln(a) \text{ is constant}$$</p>
+            <p>$$\therefore v = \ln(a) \implies v^2 = \left(\ln(a)\right)^2 \implies v' = 0$$</p>
+            <p>Substituting in the formula:</p>
+            <p>$$\left(\frac{\ln(x)}{\ln(a)}\right)' = \frac{\frac{1}{x} \cdot \ln(a) - \ln(x) \cdot 0}{\left(\ln(a)\right)^2} = \frac{\frac{1}{x} \cdot \ln(a)}{\left(\ln(a)\right)^2} = \frac{\ln(a)}{x \cdot \left(\ln(a)\right)^2} = \frac{1}{x \cdot \ln(a)}$$</p>
+            <p>Therefore:</p>
+            <p>$$\frac{d}{dx} \log_a(x) = \frac{1}{x \cdot \ln(a)}$$</p>
+        </div>
+    </div>
+
+    <div class="box" id="exp">
+        <h3>Derivatives - Exponentials</h3>
+
+        <div class="box">
+            <h4>Base \(e\)</h4>
+
+            <p>Let \(f(x) = e^x\)</p>
+            <p>\(e^x\) has a unique property. When you differentiate it, it results in itself. So it doesn't change:</p>
+            <p>$$\frac{d}{dx} e^x = e^x$$</p>
+
+            <p>Now, let's say \(g(x) = e^{kx}\), where \(k\) is a constant.</p>
+            <p>We wanna find \(\frac{d}{dx} e^{kx}\)</p>
+            <p>You just gotta apply Chain Rule over here:</p>
+            <p>$$e^{kx} \cdot (kx)'$$</p>
+            <p>We know, from the Constant Multiple Rule, that \((kx)' = k\), thus we're left with:</p>
+            <p>$$k \cdot e^{kx}$$</p>
+            <p>Therefore:</p>
+            <p>$$\frac{d}{dx} e^{kx} = k \cdot e^{kx}$$</p>
+        </div>
+
+        <div class="box">
+            <h4>Any Base (Extra)</h4>
+
+            <p>Let \(f(x) = a^x\)</p>
+            <p>We wanna find \(\frac{d}{dx} a^x\)</p>
+            <p>To do that, we need to use natural logarithm's property, which lets us write \(a^x)\ as:</p>
+            <p>$$a^x = e^{\ln(a^x)}$$</p>
+            <p>Let's use logarithm properties to manipulate a litle more:</p>
+            <p>$$a^x = e^{x \cdot \ln(a)}$$</p>
+            <p>From what we know about \(e^x\) properties, we then have:</p>
+            <p>\(a\) is constant \(\implies\) \(\ln(a)\) is constant as well</p>
+            <p>$$\frac{d}{dx} a^x = e^{x \cdot \ln(a)} \cdot \ln(a)$$</p>
+            <p>And as \(e^{x \cdot \ln(a)} = a^x\), we can come back with it. Therefore:</p>
+            <p>$$\frac{d}{dx} a^x = a^x \cdot \ln(a)$$</p>
+
+            <div class="tip">
+                <h4>Tip!</h4>
+
+                <p>When you see \(\frac{d}{dx} a^x\), just multiply it by \(\ln(a)\)</p>
+            </div>
+
+            <p>But let's now consider another function \(g(x) = a^{kx}\)</p>
+            <P>Let's find \(\frac{d}{dx} a^{kx}\)</P>
+            <p>To do so, we are basically gonna do the same thing:</p>
+            <p>$$a^{kx} = e^{\ln(a^{kx})} = e^{x \cdot k \cdot \ln(a)}$$</p>
+            <p>Differentiate using Chain Rule over again:</p>
+            <p>$$\frac{d}{dx} a^{kx} = e^{x \cdot k \cdot \ln(a)} \cdot (x \cdot k \cdot \ln(a))' = e^{x \cdot k \cdot \ln(a)} \cdot k \cdot \ln(a)$$</p>
+            <p>Then what's left is to substitute \(e^{x \cdot k \cdot \ln(a)}\) by \(a^{kx}\). Therefore:</p>
+            <p>$$\frac{d}{dx} a^{kx} = a^{kx} \cdot k \cdot \ln(a)$$</p>
+
+            <div class="tip">
+                <h4>Tip!</h4>
+
+                <p>When you see \(\frac{d}{dx} a^{kx}\), where \(k\) is a CONSTANT, just multiply it by \(k \cdot \ln(a)\)</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="box" id="trig">
+        <h3>Derivatives - Trigonometry</h3>
+
+        <p>You can also differentiate trigonometric functions.</p>
+        <p>However, since their proofs involve more complex stuff, the derivatives are just gonna be 
+            shown here, but not deeply explained.</p>
+
+        <p>$$(\sin x)' = \cos x$$</p>
+        <p>$$(\cos x)' = -\sin x$$</p>
+        <p>$$(\tan x)' = \sec^2 x$$</p>
+
+        <p>Nevertheless we're able to prove the last one, let's do it:</p>
+        <p>$$\tan x = \frac{\sin x}{\cos x}$$</p>
+        <p>Just to make it easier, let \(S = \sin x\) and \(C = \cos x\)</p>
+        <p>$$\left(\frac{\sin x}{\cos x}\right)' = \left(\frac{S}{C}\right)' = \frac{S'C - SC'}{C^2}$$</p>
+        <p>We've just learned \(S' = C\) and \(C' = -S\), thus we substitute:</p>
+        <p>$$\frac{CC - S(-S)}{C^2} = \frac{C^2 + S^2}{C^2}$$</p>
+        <p>Now, Pythagorean Trigonometric Identity says:</p>
+        <p>$$\sin^2 x + \cos^2 x = 1$$</p>
+        <p>Then substitute:</p>
+        <p>$$\frac{1}{C^2} = \left(\frac{1}{C}\right)^2$$</p>
+        <p>Substitute \(C\) by \(\cos x\) again and note that \(\frac{1}{\cos x} = \sec x\)</p>
+        <p>$$\left(\frac{1}{\cos x}\right)^2 = (\sec x)^2 = \sec^2 x$$</p>
+        <p>Therefore:</p>
+        <p>$$(\tan x)' = \sec^2 x$$</p>
+
+        <div class="tip">
+            <h4>Tip!</h4>
+
+            <p>This tip will become handy in Product Rule of derivatives, integrals, AND in Taylor Series.</p>
+
+            <p>When you start off with \(\sin x\) and differentiate it forever you have a pretty cool and repeating sequence:</p>
+            <p>$$(\sin x)' = \cos x$$</p>
+            <p>$$(\cos x)' = -\sin x$$</p>
+            <p>$$(-\sin x)' = -\cos x$$</p>
+            <p>$$(-\cos x)' = -(-\sin x) = \sin x$$</p>
+            <p>$$(\sin x)' = \cos x$$</p>
+            <p>...</p>
+            <p>You see the pattern?</p>
+            <p>When you start differentiating \(\sin x\) forever, you get:</p>
+            <p>$$\{ \sin x, \cos x, -\sin x, -\cos x, ... \}$$</p>
+
+            <p>Let's now start differentiating forever with \(\cos x\):</p>
+            <p>$$(\cos x)' = -\sin x$$</p>
+            <p>$$(-\sin x)' = -\cos x$$</p>
+            <p>$$(-\cos x)' = -(-\sin x) = \sin x$$</p>
+            <p>$$(\sin x)' = \cos x$$</p>
+            <p>$$(\cos x)' = -\sin x$$</p>
+            <p>...</p>
+            <p>Again! It's repeating!</p>
+            <p>So when you start differentiating \(\cos x\) forever, you get:</p>
+            <p>$$\{ \cos x, -\sin x, -\cos x, \sin x, ... \}$$</p>
+        </div>
+    </div>
+
+    <div class="box" id="ex6">
+        <h3>Ex. 6 - Implicit Differentiation</h3>
+
+        <p>Imagine you have this:</p>
+        <p>$$x^2 + y^2 = 25$$</p>
+        <p>Where \(y\) is a function of x (y is dependent on x).</p>
+        <p>What's the slope of the function at the point \((3, 4)\)?</p>
+        <p>First, we gotta substitute the point's coordinates to check whether the function contains it or not;</p>
+        <p>$$x^2 + y^2 = 3^2 + 4^2 = 9 + 16 = 25 \checkmark$$</p>
+        <p>So it is a point on the function!</p>
+        <p>Now, let's differentiate the equation using Sum Rule:</p>
+        <p>$$\frac{d}{dx} (x^2 + y^2) = 0 \implies \frac{d}{dx} x^2 + \frac{d}{dx} y^2 = 0$$</p>
+        <p>Note that \(y\) is a function, so we must apply Chain Rule:</p>
+        <p>$$2x + 2y \cdot y' = 0$$</p>
+        <p>Now, isolate \(y'\) to find the derivative of the function:</p>
+        <p>$$2y \cdot y' = -2x \implies y' = \frac{-2x}{2y} \implies y' = -\frac{x}{y}$$</p>
+        <p>There we go! We found the derivative!</p>
+        <p>And, finally, let's find the slope of the function at the point \((3, 4)\), which is 
+            just substituting the coordinates in the derivative:</p>
+        <p>Slope at (3, 4): $$slope = -\frac{3}{4}$$</p>
+        <p>Done!</p>
+
+        <p>Nevertheless, this technique can be used in many ways to find special derivatives or just more scary ones.</p>
+        <p>Let's take a look at another example:</p>
+
+        <p>Find \(\frac{d}{dx} x^x\)</p>
+        <p>First step:</p>
+        <p>Let $$y = x^x$$</p>
+        <p>Use log "Knock Down" property:</p>
+        <p>$$\ln(y) = \ln(x^x) \implies \ln(y) = x \cdot \ln(x)$$</p>
+        <p>Now, just differentiate both sides!</p>
+        <p>As we saw in the Logarithms topic: $$(\ln(y))' = \frac{y'}{y}:$$</p>
+        <p>$$\frac{y'}{y} = (x \cdot \ln(x))'$$</p>
+        <p>Applying Product Rule, we're left with:</p>
+        <p>$$\frac{y'}{y} = x' \cdot \ln(x) + x \cdot (\ln(x))' = 1 \cdot \ln(x) + x \cdot \frac{1}{x} = \ln(x) + 1$$</p>
+        <p>Now, just isolate \(y'\) and substitute \(y\) by the original form \(x^x\):</p>
+        <p>$$y' = y \cdot (\ln(x) + 1)$$</p>
+        <p>$$y' = x^x \cdot (\ln(x) + 1)$$</p>
+        <p>Done!</p>
+    </div>
+</body>
+</html>

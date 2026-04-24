@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrals</title>
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- MathJax SCRIPTS -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body>
+    <header>
+        <img src="../imgs/logo.png">
+        <h2>Learn Calculus > Integrals</h2>
+    </header>
+
+    <div class="box">
+        <h3>Topics we're gonna study in Integrals:</h3>
+
+        <a href="#integrals">Integrals - Intuition</a>
+    </div>
+
+    <div class="box" id="integrals">
+        <h3>Integrals - Intuition</h3>
+
+        <p>The integral is basically an area under a curve.</p>
+        <p>Its purpose is to calculate acumulation over time, volume and much more stuff.</p>
+
+        <p>Let's take a look at our first example:</p>
+        <p>Let \(f(x) = 2x\)</p>
+        <p>Let's find the area under the that line from \(x = 0\) to \\(x = 1\).</p>
+        <p>In that interval, the function shapes a right triangle, which the base is \(1\) and the height is \(f(1) = 2\).</p>
+        <p>So to calculate the area, we just do height times base over \(2\):</p>
+        <p>$$\frac{1 \cdot 2}{2} = 1$$</p>
+        <p>So the are under that line from \(0\) to \(1\) is \(1\), meaning that the integral from \(0\) to \(1\) of \(f(x)\) is 1:</p>
+        <p>$$\int_0^1 f(x)\,dx = \int_0^1 2x\,dx = 1$$</p>
+    </div>
+</body>
+</html>
